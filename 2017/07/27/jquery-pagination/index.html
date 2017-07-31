@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="自己要用的，记一下。就是一个基于jquery的分页。    因为自己项目用的是amazeui,所以样式就是amazeui的样式！！！  分页  obj为你需要放分页的父元素， eg:你需要填写的父元素都在一个id为all-page的div下，则obj传$(‘#all-page’) pageNow为当前显示的页数 pageNum为总的页面数   123456789101112131415161718">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery分页代码">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/jquery-pagination/index.html">
+<meta property="og:site_name" content="旬糖子">
+<meta property="og:description" content="自己要用的，记一下。就是一个基于jquery的分页。    因为自己项目用的是amazeui,所以样式就是amazeui的样式！！！  分页  obj为你需要放分页的父元素， eg:你需要填写的父元素都在一个id为all-page的div下，则obj传$(‘#all-page’) pageNow为当前显示的页数 pageNum为总的页面数   123456789101112131415161718">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/jquery-page.png">
+<meta property="og:updated_time" content="2017-07-28T05:31:08.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery分页代码">
+<meta name="twitter:description" content="自己要用的，记一下。就是一个基于jquery的分页。    因为自己项目用的是amazeui,所以样式就是amazeui的样式！！！  分页  obj为你需要放分页的父元素， eg:你需要填写的父元素都在一个id为all-page的div下，则obj传$(‘#all-page’) pageNow为当前显示的页数 pageNum为总的页面数   123456789101112131415161718">
+<meta name="twitter:image" content="http://yoursite.com/img/jquery-page.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/jquery-pagination/"/>
+
+
+
+
+
+  <title>jQuery分页代码 | 旬糖子</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旬糖子</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/jquery-pagination/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旬糖子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旬糖子">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery分页代码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T16:49:32+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>自己要用的，记一下。就是一个基于jquery的分页。<br>    因为自己项目用的是amazeui,所以样式就是amazeui的样式！！！</p>
+<blockquote>
+<p><strong>分页</strong></p>
+<ul>
+<li>obj为你需要放分页的父元素，</li>
+<li>eg:你需要填写的父元素都在一个id为all-page的div下，则obj传$(‘#all-page’)</li>
+<li>pageNow为当前显示的页数</li>
+<li>pageNum为总的页面数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">var pagination = function (obj,pageNow,pageNum)&#123;</div><div class="line">	var paginations = &apos;&apos;;</div><div class="line">	//上一页</div><div class="line">	if(pageNow&gt;1)&#123;</div><div class="line">		paginations += &apos;&lt;li id=&quot;last-page&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125; else &#123;</div><div class="line">		// obj.remove(&apos;.prevPage&apos;);</div><div class="line">		paginations += &apos;&lt;li id=&quot;last-page&quot;&gt;&lt;span &gt;&amp;laquo;&lt;/span&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	//中间页码</div><div class="line">	if(pageNow != 1 &amp;&amp; pageNow &gt;= 4 &amp;&amp; pageNum != 4)&#123;</div><div class="line">		paginations += &apos;&lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;tcdNumber&quot;&gt;&apos;+1+&apos;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	if(pageNow-2 &gt; 2 &amp;&amp; pageNow &lt;= pageNum &amp;&amp; pageNum &gt; 5)&#123;</div><div class="line">		paginations += &apos;&lt;li&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	var start = pageNow -2,end = pageNow+2;</div><div class="line">	if((start &gt; 1 &amp;&amp; pageNow &lt; 4)||pageNow == 1)&#123;</div><div class="line">		end++;</div><div class="line">	&#125;</div><div class="line">	if(pageNow &gt; pageNum-4 &amp;&amp; pageNow &gt;= pageNum)&#123;</div><div class="line">		start--;</div><div class="line">	&#125;</div><div class="line">	for (;start &lt;= end; start++) &#123;</div><div class="line">		if(start &lt;= pageNum &amp;&amp; start &gt;= 1)&#123;</div><div class="line">			if(start != pageNow)&#123;</div><div class="line">				paginations += &apos;&lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;tcdNumber&quot;&gt;&apos;+ start +&apos;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">			&#125;else&#123;</div><div class="line">				paginations += &apos;&lt;li class=&quot;am-active&quot;&gt;&lt;a&gt;&apos;+ start +&apos;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	if(pageNow + 2 &lt; pageNum - 1 &amp;&amp; pageNow &gt;= 1 &amp;&amp; pageNum &gt; 5)&#123;</div><div class="line">		paginations += &apos;&lt;li&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	if(pageNow != pageNum &amp;&amp; pageNow &lt; pageNum -2  &amp;&amp; pageNum != 4)&#123;</div><div class="line">		paginations += &apos;&lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;tcdNumber&quot;&gt;&apos;+pageNum+&apos;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	//下一页</div><div class="line">	if(pageNow &lt; pageNum)&#123;</div><div class="line">		paginations += &apos;&lt;li id=&quot;next-page&quot;&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;else&#123;</div><div class="line">		paginations += &apos;&lt;li id=&quot;next-page&quot;&gt;&lt;span&gt;&amp;raquo;&lt;/span&gt;&lt;/li&gt;&apos;</div><div class="line">	&#125;</div><div class="line">	obj.append(paginations);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>页面click绑定</strong></p>
+<ul>
+<li>保证跳转的页面对就好了。</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$(&apos;.all-page&apos;).on(&apos;click&apos;,&apos;a&apos;,function()&#123;</div><div class="line">	var id = $(this).parent().attr(&apos;id&apos;);</div><div class="line">	num = 0;</div><div class="line">	if(&apos;last-page&apos; === id)&#123;</div><div class="line"> 	num = parseInt($(&apos;.am-pagination .am-active&apos;).text())-1;</div><div class="line"> 	if(1 === num)&#123;</div><div class="line"> 		$(this).attr(&apos;disabled&apos;,true);</div><div class="line"> 	&#125;</div><div class="line"> 	// common.goToPage(num);</div><div class="line">	&#125; else if(&apos;next-page&apos; === id)&#123;</div><div class="line"> 	num = parseInt($(&apos;.am-pagination .am-active&apos;).text())+1;</div><div class="line">	&#125; else &#123;</div><div class="line">		num = $(this).text()</div><div class="line">	&#125;</div><div class="line">	start = num_list * (num-1);</div><div class="line">	toWork() // 你要去执行的函数！！！！</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这样分页就好了 ，样式我没写进去，自己加就好啦<br>配合amaze的话  大概张这样：<br><img src="/img/jquery-page.png" alt="一张效果图"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>看我都在吃土了，真的不考虑打点钱吗？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旬糖子 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="旬糖子 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/09/about-vuex/" rel="next" title="在vuex的大门口">
+                <i class="fa fa-chevron-left"></i> 在vuex的大门口
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/31/form-operate/" rel="prev" title="填写form数据和从form中获取数据">
+                填写form数据和从form中获取数据 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="旬糖子" />
+          <p class="site-author-name" itemprop="name">旬糖子</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ogurigin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/3175496494/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旬糖子</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
