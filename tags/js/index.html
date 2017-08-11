@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="dom," />
+  <meta name="keywords" content="旬糖子" />
 
 
 
@@ -99,18 +99,13 @@
 
 
 
-<meta name="description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
-<meta name="keywords" content="dom">
-<meta property="og:type" content="article">
-<meta property="og:title" content="填写form数据和从form中获取数据">
-<meta property="og:url" content="http://yoursite.com/2017/07/31/form-operate/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="旬糖子">
+<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
 <meta property="og:site_name" content="旬糖子">
-<meta property="og:description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-26T03:01:15.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="填写form数据和从form中获取数据">
-<meta name="twitter:description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
+<meta name="twitter:title" content="旬糖子">
 
 
 
@@ -138,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/31/form-operate/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/js/"/>
 
 
 
 
 
-  <title>填写form数据和从form中获取数据 | 旬糖子</title>
+  <title>标签: js | 旬糖子</title>
   
 
 
@@ -169,7 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,192 +292,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/form-operate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="旬糖子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旬糖子">
-    </span>
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1>js<small>标签</small>
+      </h1>
+    </div>
 
     
-      <header class="post-header">
+      
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">填写form数据和从form中获取数据</h1>
-        
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/08/11/es6-environment/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">es6编译环境搭建</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-31T15:54:30+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，<br>    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数</p>
-<blockquote>
-<p><strong>填写表单数据</strong></p>
-<ul>
-<li>obj为你所在填写的input所在父元素，</li>
-<li>eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’)</li>
-<li>jsonValue为从后台获取的数据</li>
-<li><strong>其中这次的选项框都为单选框，有复选框的请自己添加循环即可</strong></li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function setFormValue(obj,jsonValue)&#123;</div><div class="line">	for(var key in jsonValue)&#123;</div><div class="line">		var $oinput = obj.find(&quot;[name=&quot; + key + &quot;]&quot;);</div><div class="line">		if ($oinput.attr(&quot;type&quot;) == &quot;radio&quot; || $oinput.attr(&quot;type&quot;) == &quot;checkbox&quot;) &#123;</div><div class="line">			 $oinput.each(function() &#123;</div><div class="line">			 	if ($(this).val() == jsonValue[key])&#123;</div><div class="line">                    $(this).prop(&quot;checked&quot;, true).change();</div><div class="line">			 	&#125;</div><div class="line">			 &#125;)</div><div class="line">		&#125; else &#123;</div><div class="line">			$oinput.val(jsonValue[key]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>获取表单数据</strong></p>
-<ul>
-<li>obj与上述一致</li>
-<li>jsonInfo为你所需要传给后台的数据名称</li>
-<li><strong>其中这次的选项框都为单选框，有复选框的请自己添加循环即可</strong></li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function getFormValue(obj)&#123;</div><div class="line">	jsonInfo =  &#123;</div><div class="line">        &quot;a&quot;: &quot;&quot;,</div><div class="line">        &quot;b&quot;: &quot;&quot;,</div><div class="line">        &quot;c&quot;: &quot;&quot;,</div><div class="line">    &#125;</div><div class="line">	for(var key in jsonInfo) &#123;</div><div class="line">		var $oinput = obj.find(&quot;[name=&quot; + key + &quot;]&quot;);</div><div class="line">		if ($oinput.attr(&quot;type&quot;) === &quot;radio&quot; || $oinput.attr(&quot;type&quot;) === &quot;checkbox&quot;) &#123;</div><div class="line">			 $oinput.each(function() &#123;</div><div class="line">			 	if ($(this).prop(&apos;checked&apos;))&#123;</div><div class="line">                    jsonInfo[key] = $(this).val();</div><div class="line">			 	&#125;</div><div class="line">			 &#125;)</div><div class="line">		&#125; else &#123;</div><div class="line">			 jsonInfo[key] = $oinput.val();</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	return jsonInfo;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    <div>
-      
+            </a>
         
+      </h2>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-11T15:44:22+08:00"
+              content="2017-08-11" >
+          08-11
+        </time>
+      </div>
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>看我都在吃土了，真的不考虑打点钱吗？</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旬糖子 WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.jpg" alt="旬糖子 Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/dom/" rel="tag"># dom</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/27/jquery-pagination/" rel="next" title="jQuery分页代码">
-                <i class="fa fa-chevron-left"></i> jQuery分页代码
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/31/hexo-to-github/" rel="prev" title="hexo上传Github过程中遇到的坑">
-                hexo上传Github过程中遇到的坑 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -490,12 +337,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODQ5Mi81MDYz"></div>
-    
-  </div>
-
 
         </div>
         
@@ -703,10 +544,10 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-
+  
 
   
 
@@ -735,17 +576,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

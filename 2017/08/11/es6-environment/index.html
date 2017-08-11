@@ -83,7 +83,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="dom," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
-<meta name="keywords" content="dom">
+<meta name="description" content="es6编译环境搭建首先建立一个文件夹放置代码，并在文件夹下建立dist和src文件夹，再建立一个index.html。 然后先初始化1npm init -y 然后在根目录下就会多出一个package.json的文件，一般不需要修改，要修改的话打开修改一下就好了 全局安装babel关于babel：就是一个可以将es6转成大部分浏览器可以识别的es5的格式的转码器 1npm install -g ba">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="填写form数据和从form中获取数据">
-<meta property="og:url" content="http://yoursite.com/2017/07/31/form-operate/index.html">
+<meta property="og:title" content="es6编译环境搭建">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/es6-environment/index.html">
 <meta property="og:site_name" content="旬糖子">
-<meta property="og:description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
+<meta property="og:description" content="es6编译环境搭建首先建立一个文件夹放置代码，并在文件夹下建立dist和src文件夹，再建立一个index.html。 然后先初始化1npm init -y 然后在根目录下就会多出一个package.json的文件，一般不需要修改，要修改的话打开修改一下就好了 全局安装babel关于babel：就是一个可以将es6转成大部分浏览器可以识别的es5的格式的转码器 1npm install -g ba">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-26T03:01:15.688Z">
+<meta property="og:updated_time" content="2017-08-11T08:26:37.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="填写form数据和从form中获取数据">
-<meta name="twitter:description" content="当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数  填写表单数据  obj为你所在填写的input所在父元素， eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’) jsonValue为从后台获取的数据 其中这次的选项框都为单选框，有复">
+<meta name="twitter:title" content="es6编译环境搭建">
+<meta name="twitter:description" content="es6编译环境搭建首先建立一个文件夹放置代码，并在文件夹下建立dist和src文件夹，再建立一个index.html。 然后先初始化1npm init -y 然后在根目录下就会多出一个package.json的文件，一般不需要修改，要修改的话打开修改一下就好了 全局安装babel关于babel：就是一个可以将es6转成大部分浏览器可以识别的es5的格式的转码器 1npm install -g ba">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/31/form-operate/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/11/es6-environment/"/>
 
 
 
 
 
-  <title>填写form数据和从form中获取数据 | 旬糖子</title>
+  <title>es6编译环境搭建 | 旬糖子</title>
   
 
 
@@ -307,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/form-operate/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/es6-environment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="旬糖子">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">填写form数据和从form中获取数据</h1>
+          <h1 class="post-title" itemprop="name headline">es6编译环境搭建</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-31T15:54:30+08:00">
-                2017-07-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T15:44:22+08:00">
+                2017-08-11
               </time>
             
 
@@ -371,26 +371,27 @@
       
 
       
-        <p>当页面有大量的input,初始化的时候需要从服务器获取数据，并填入表单的时候，<br>    一个个去val()操作的话就会很傻逼了，稍微记录下这次项目自己写的两个函数</p>
-<blockquote>
-<p><strong>填写表单数据</strong></p>
-<ul>
-<li>obj为你所在填写的input所在父元素，</li>
-<li>eg:你需要填写的父元素都在一个id为all-form的div下，则obj传$(‘#all-form’)</li>
-<li>jsonValue为从后台获取的数据</li>
-<li><strong>其中这次的选项框都为单选框，有复选框的请自己添加循环即可</strong></li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function setFormValue(obj,jsonValue)&#123;</div><div class="line">	for(var key in jsonValue)&#123;</div><div class="line">		var $oinput = obj.find(&quot;[name=&quot; + key + &quot;]&quot;);</div><div class="line">		if ($oinput.attr(&quot;type&quot;) == &quot;radio&quot; || $oinput.attr(&quot;type&quot;) == &quot;checkbox&quot;) &#123;</div><div class="line">			 $oinput.each(function() &#123;</div><div class="line">			 	if ($(this).val() == jsonValue[key])&#123;</div><div class="line">                    $(this).prop(&quot;checked&quot;, true).change();</div><div class="line">			 	&#125;</div><div class="line">			 &#125;)</div><div class="line">		&#125; else &#123;</div><div class="line">			$oinput.val(jsonValue[key]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>获取表单数据</strong></p>
-<ul>
-<li>obj与上述一致</li>
-<li>jsonInfo为你所需要传给后台的数据名称</li>
-<li><strong>其中这次的选项框都为单选框，有复选框的请自己添加循环即可</strong></li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function getFormValue(obj)&#123;</div><div class="line">	jsonInfo =  &#123;</div><div class="line">        &quot;a&quot;: &quot;&quot;,</div><div class="line">        &quot;b&quot;: &quot;&quot;,</div><div class="line">        &quot;c&quot;: &quot;&quot;,</div><div class="line">    &#125;</div><div class="line">	for(var key in jsonInfo) &#123;</div><div class="line">		var $oinput = obj.find(&quot;[name=&quot; + key + &quot;]&quot;);</div><div class="line">		if ($oinput.attr(&quot;type&quot;) === &quot;radio&quot; || $oinput.attr(&quot;type&quot;) === &quot;checkbox&quot;) &#123;</div><div class="line">			 $oinput.each(function() &#123;</div><div class="line">			 	if ($(this).prop(&apos;checked&apos;))&#123;</div><div class="line">                    jsonInfo[key] = $(this).val();</div><div class="line">			 	&#125;</div><div class="line">			 &#125;)</div><div class="line">		&#125; else &#123;</div><div class="line">			 jsonInfo[key] = $oinput.val();</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	return jsonInfo;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="es6编译环境搭建"><a href="#es6编译环境搭建" class="headerlink" title="es6编译环境搭建"></a>es6编译环境搭建</h3><p>首先建立一个文件夹放置代码，并在文件夹下建立dist和src文件夹，再建立一个index.html。</p>
+<h5 id="然后先初始化"><a href="#然后先初始化" class="headerlink" title="然后先初始化"></a>然后先初始化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init -y</div></pre></td></tr></table></figure>
+<p>然后在根目录下就会多出一个package.json的文件，一般不需要修改，要修改的话打开修改一下就好了</p>
+<h5 id="全局安装babel"><a href="#全局安装babel" class="headerlink" title="全局安装babel"></a>全局安装babel</h5><p>关于babel：就是一个可以将es6转成大部分浏览器可以识别的es5的格式的转码器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g babel-cli</div></pre></td></tr></table></figure>
+<p>等待安装完成就好了</p>
+<h5 id="安装-es2015转码"><a href="#安装-es2015转码" class="headerlink" title="安装 es2015转码"></a>安装 es2015转码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel-preset-es2015 babel-cli</div></pre></td></tr></table></figure>
+<p>这样就可以了 ，当然还有其他的转码规则有需要的可以安装</p>
+<h5 id="配置文件-babelrc"><a href="#配置文件-babelrc" class="headerlink" title="配置文件.babelrc"></a>配置文件.babelrc</h5><p>在根目录下新建一个.babelrc文件，写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;presets&quot; :[</div><div class="line">		&quot;es2015&quot;</div><div class="line">	],</div><div class="line">	&quot;plugins&quot;:[]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>保存就可以了。</p>
+<p>这样环境基本就搭建好了。</p>
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>可以在src中新建一个index.js，写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let t =&apos;Hello World&apos;;</div><div class="line">console.log(t);</div></pre></td></tr></table></figure>
+<p>然后在之前的index.html中引入index.js</p>
+<p>需要注意的是</p>
+<p><strong>引入的时候路径是dist的路径，不要引入src的</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;./dist/index.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">babel src/index.js -o dist/index.js</div></pre></td></tr></table></figure>
+<p>这样，在dist下面就会多一个index.js文件，然后是es5的代码规范。</p>
 
       
     </div>
@@ -441,7 +442,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dom/" rel="tag"># dom</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -454,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/27/jquery-pagination/" rel="next" title="jQuery分页代码">
-                <i class="fa fa-chevron-left"></i> jQuery分页代码
+              <a href="/2017/07/31/vue-server-deployt/" rel="next" title="vue 服务器部署">
+                <i class="fa fa-chevron-left"></i> vue 服务器部署
               </a>
             
           </div>
@@ -463,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/31/hexo-to-github/" rel="prev" title="hexo上传Github过程中遇到的坑">
-                hexo上传Github过程中遇到的坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -516,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -590,6 +596,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#es6编译环境搭建"><span class="nav-number">1.</span> <span class="nav-text">es6编译环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#然后先初始化"><span class="nav-number">1.0.1.</span> <span class="nav-text">然后先初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#全局安装babel"><span class="nav-number">1.0.2.</span> <span class="nav-text">全局安装babel</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-es2015转码"><span class="nav-number">1.0.3.</span> <span class="nav-text">安装 es2015转码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置文件-babelrc"><span class="nav-number">1.0.4.</span> <span class="nav-text">配置文件.babelrc</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试"><span class="nav-number">1.0.5.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
