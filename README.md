@@ -1,12 +1,12 @@
-## 一个超级无敌全宇宙最可爱的blog
+## 一blog
 
-* [这是可爱的地址](https://ogurigin.github.io/)
+* [地址](https://ogurigin.github.io/)
 
 ### 简历( • ̀ω•́ )✧
 
 * [简历戳这里](https://ogurigin.github.io/about/)
 
-### 一本正经的内容
+### 内容
 
 * [在vuex的大门口](https://ogurigin.github.io/2017/05/09/about-vuex/)
 * [jQuery分页代码](https://ogurigin.github.io/2017/07/27/jquery-pagination/)
