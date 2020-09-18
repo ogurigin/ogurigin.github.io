@@ -1,5 +1,5 @@
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?ogurigin=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=ogurigin)](https://github.com/anuraghazra/github-readme-stats)
 ## 一blog
 
 * [地址](https://ogurigin.github.io/)
